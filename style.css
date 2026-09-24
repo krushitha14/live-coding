@@ -1,0 +1,889 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f7f7;
+  color: #111;
+}
+
+.dashboard {
+  width: min(1120px, 92%);
+  margin: 40px auto;
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.8fr
+    1.25fr;
+
+  grid-template-rows:
+    auto
+    auto
+    auto;
+
+  gap: 24px;
+}
+
+
+/* =========================
+   COMMON CARD
+========================= */
+
+.card {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card h2 {
+  font-size: 30px;
+  line-height: .98;
+  letter-spacing: -1.5px;
+}
+
+.card p {
+  line-height: 1.25;
+}
+
+
+/* =========================
+   CREATE
+========================= */
+
+.create-card {
+  background: #fff0e2;
+  min-height: 415px;
+  padding: 78px 32px;
+}
+
+.create-card h2 {
+  font-size: 38px;
+}
+
+.create-card em {
+  color: #7350d9;
+  font-style: italic;
+}
+
+.create-card button {
+  border: 0;
+  background: #ffcc67;
+  color: #6947d1;
+
+  padding: 18px 28px;
+  border-radius: 40px;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  margin-top: 55px;
+}
+
+.create-card button span {
+  font-size: 22px;
+}
+
+.cursor {
+  position: absolute;
+  left: 125px;
+  bottom: 78px;
+  font-size: 30px;
+  transform: rotate(-20deg);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-card {
+  background: #754bd7;
+  color: white;
+
+  min-height: 325px;
+
+  padding: 60px 55px;
+
+  text-align: center;
+}
+
+.hero-card h1 {
+  font-size: 57px;
+  line-height: .98;
+  font-weight: 400;
+  letter-spacing: -3px;
+}
+
+.hero-card h1 span {
+  color: #ffce67;
+}
+
+.hero-card h1 i {
+  font-style: italic;
+}
+
+.stars {
+  color: #ffce67;
+  font-size: 30px;
+  letter-spacing: 9px;
+  margin-top: 38px;
+}
+
+.hero-card p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+
+/* =========================
+   SCHEDULE
+========================= */
+
+.schedule-card {
+  background: #ddd0ff;
+  padding: 44px 32px;
+  min-height: 600px;
+}
+
+.schedule-card h2 {
+  font-size: 34px;
+}
+
+.chart-box {
+  background: white;
+  border-radius: 20px;
+
+  margin-top: 38px;
+  padding: 25px 20px;
+
+  min-height: 315px;
+}
+
+.chart-box h3 {
+  font-size: 17px;
+}
+
+.days {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 30px;
+  color: #999;
+}
+
+.days b {
+  background: #ffe4e8;
+  color: #ef7689;
+
+  padding: 7px 11px;
+  border-radius: 20px;
+}
+
+.chart-box label {
+  display: block;
+
+  width: max-content;
+
+  background: #d7f8e4;
+  color: #32a866;
+
+  padding: 7px 12px;
+  border-radius: 8px;
+
+  margin: 12px auto;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.bars {
+  height: 120px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.bars i {
+  width: 22px;
+  background: #704bd3;
+  border-radius: 15px 15px 0 0;
+}
+
+.times {
+  display: flex;
+  justify-content: space-between;
+  color: #999;
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+.schedule-card > p {
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+
+/* =========================
+   ACCOUNTS
+========================= */
+
+.accounts-card {
+  background: white;
+  min-height: 255px;
+  padding: 30px 25px;
+}
+
+.accounts {
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.account {
+  min-width: 130px;
+
+  padding: 10px;
+
+  border-radius: 35px;
+  background: white;
+
+  box-shadow: 0 5px 25px rgba(0,0,0,.08);
+
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  align-items: center;
+}
+
+.account strong {
+  grid-row: span 2;
+
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  background: #ffcb64;
+
+  color: #704bd3;
+}
+
+.account span {
+  font-size: 12px;
+}
+
+.account small {
+  font-size: 9px;
+  color: #999;
+}
+
+.accounts-card h2 {
+  margin-top: 25px;
+}
+
+
+/* =========================
+   CONSISTENCY
+========================= */
+
+.consistency-card {
+  background: #ffcc68;
+  min-height: 255px;
+  padding: 30px 25px;
+}
+
+.consistency-card h2 {
+  font-size: 32px;
+}
+
+.calendar {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+.calendar header {
+  background: #744bd5;
+  color: white;
+
+  padding: 10px 14px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 12px;
+}
+
+.checks {
+  display: flex;
+  justify-content: space-around;
+  padding: 18px;
+}
+
+.checks b {
+  width: 20px;
+  height: 20px;
+
+  background: #754bd7;
+  color: white;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   AI
+========================= */
+
+.ai-card {
+  background: #ffcc68;
+  min-height: 435px;
+  padding: 30px 25px;
+}
+
+.ai-card h2 {
+  font-size: 34px;
+}
+
+.chat {
+  position: absolute;
+
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+
+  height: 220px;
+
+  background: white;
+  border-radius: 16px;
+
+  padding: 18px;
+}
+
+.message {
+  padding: 12px;
+  border-radius: 15px;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.message.user {
+  background: #fff0f1;
+  width: 75%;
+}
+
+.message.ai {
+  background: #ffeac5;
+  width: 82%;
+  margin-top: 20px;
+}
+
+.ai-icon {
+  position: absolute;
+
+  right: -8px;
+  top: 65px;
+
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  display: grid;
+  place-items: center;
+
+  color: #754bd7;
+  font-size: 30px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.1);
+}
+
+
+/* =========================
+   STAT
+========================= */
+
+.stat-card {
+  background: white;
+  min-height: 245px;
+  padding: 30px 25px;
+}
+
+.stat-card > strong {
+  font-size: 58px;
+  font-weight: 400;
+}
+
+.stat-card p {
+  margin-top: 8px;
+  font-size: 17px;
+}
+
+.avatars {
+  display: flex;
+  margin-top: 45px;
+}
+
+.avatars span {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  background: #d9c9ff;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 28px;
+
+  border: 3px solid white;
+
+  margin-left: -8px;
+}
+
+.avatars span:first-child {
+  margin-left: 0;
+}
+
+
+/* =========================
+   FOLLOWERS
+========================= */
+
+.followers-card {
+  background: #754bd7;
+  color: white;
+
+  min-height: 245px;
+
+  padding: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.growth-chart {
+  background: white;
+  color: #111;
+
+  width: 220px;
+  min-width: 220px;
+
+  height: 190px;
+
+  border-radius: 16px;
+
+  padding: 20px;
+
+  position: relative;
+}
+
+.growth-number small {
+  color: #999;
+  display: block;
+}
+
+.growth-number strong {
+  font-size: 25px;
+}
+
+.growth-number b {
+  background: #d9f7df;
+  color: #39a45d;
+
+  font-size: 9px;
+
+  padding: 4px;
+
+  border-radius: 6px;
+}
+
+.growth-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+
+  height: 75px;
+
+  margin-top: 5px;
+}
+
+.growth-bars i {
+  width: 20px;
+
+  background: #754bd7;
+
+  border-radius: 10px 10px 0 0;
+}
+
+.total {
+  position: absolute;
+  bottom: 8px;
+  right: 15px;
+
+  font-size: 9px;
+}
+
+.total strong {
+  display: block;
+  font-size: 14px;
+}
+
+.followers-card h2 {
+  font-size: 37px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+
+/* =========================
+   DESKTOP GRID
+========================= */
+
+@media (min-width: 800px) {
+
+  .create-card {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .hero-card {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .schedule-card {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+
+  .accounts-card {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .consistency-card {
+    grid-column: 3;
+    grid-row: 3;
+  }
+
+  .ai-card {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .stat-card {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .followers-card {
+    grid-column: 2 / span 2;
+    grid-row: 4;
+  }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 799px) {
+
+  .dashboard {
+    width: 94%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-card,
+  .followers-card {
+    grid-column: span 2;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  body {
+    background: #f5f5f5;
+  }
+
+  .dashboard {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .card {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  /* Mobile order exactly like first design */
+
+  .hero-card {
+    order: 1;
+    min-height: 115px;
+    padding: 17px 15px;
+  }
+
+  .hero-card h1 {
+    font-size: 25px;
+    letter-spacing: -1.5px;
+  }
+
+  .stars {
+    font-size: 13px;
+    margin-top: 8px;
+    letter-spacing: 3px;
+  }
+
+  .hero-card p {
+    font-size: 8px;
+    margin-top: 3px;
+  }
+
+
+  .accounts-card {
+    order: 2;
+    min-height: 82px;
+    padding: 10px;
+  }
+
+  .accounts {
+    gap: 6px;
+  }
+
+  .account {
+    min-width: 110px;
+    padding: 5px;
+  }
+
+  .accounts-card h2 {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+
+  .consistency-card {
+    order: 3;
+    min-height: 115px;
+    padding: 15px;
+  }
+
+  .consistency-card h2 {
+    font-size: 21px;
+  }
+
+  .calendar {
+    margin-top: 10px;
+  }
+
+  .calendar header {
+    padding: 6px;
+    font-size: 8px;
+  }
+
+  .checks {
+    padding: 8px;
+  }
+
+  .checks b {
+    width: 13px;
+    height: 13px;
+    font-size: 7px;
+  }
+
+
+  .schedule-card {
+    order: 4;
+    min-height: 330px;
+    padding: 18px;
+  }
+
+  .schedule-card h2 {
+    font-size: 22px;
+  }
+
+  .chart-box {
+    margin-top: 15px;
+    min-height: 180px;
+    padding: 12px;
+  }
+
+  .chart-box h3 {
+    font-size: 11px;
+  }
+
+  .days {
+    margin-top: 12px;
+    font-size: 9px;
+  }
+
+  .days b {
+    padding: 4px 7px;
+  }
+
+  .chart-box label {
+    margin: 5px auto;
+    font-size: 7px;
+    padding: 4px 7px;
+  }
+
+  .bars {
+    height: 70px;
+  }
+
+  .bars i {
+    width: 12px;
+  }
+
+  .schedule-card > p {
+    font-size: 10px;
+    margin-top: 10px;
+  }
+
+
+  .followers-card {
+    order: 5;
+    min-height: 155px;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .growth-chart {
+    width: 115px;
+    min-width: 115px;
+    height: 115px;
+    padding: 10px;
+  }
+
+  .growth-number small {
+    font-size: 7px;
+  }
+
+  .growth-number strong {
+    font-size: 16px;
+  }
+
+  .growth-bars {
+    height: 45px;
+    gap: 5px;
+  }
+
+  .growth-bars i {
+    width: 10px;
+  }
+
+  .followers-card h2 {
+    font-size: 22px;
+  }
+
+
+  .stat-card {
+    order: 6;
+    min-height: 100px;
+    padding: 15px;
+  }
+
+  .stat-card > strong {
+    font-size: 35px;
+  }
+
+  .stat-card p {
+    font-size: 11px;
+    margin-top: 3px;
+  }
+
+  .avatars {
+    margin-top: 10px;
+  }
+
+  .avatars span {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+
+  .create-card {
+    order: 7;
+    min-height: 150px;
+    padding: 18px;
+  }
+
+  .create-card h2 {
+    font-size: 22px;
+  }
+
+  .create-card button {
+    margin-top: 15px;
+    padding: 9px 15px;
+    font-size: 11px;
+  }
+
+  .cursor {
+    left: 80px;
+    bottom: 30px;
+    font-size: 18px;
+  }
+
+
+  .ai-card {
+    order: 8;
+    min-height: 250px;
+    padding: 18px;
+  }
+
+  .ai-card h2 {
+    font-size: 22px;
+  }
+
+  .chat {
+    left: 18px;
+    right: 18px;
+    bottom: 15px;
+    height: 130px;
+    padding: 10px;
+  }
+
+  .message {
+    font-size: 7px;
+    padding: 7px;
+  }
+
+  .ai-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    top: 38px;
+  }
+
+}
